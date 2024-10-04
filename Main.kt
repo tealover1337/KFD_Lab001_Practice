@@ -1,6 +1,5 @@
 package ru.mephi
 
-import org.graalvm.polyglot.PolyglotAccess
 import kotlin.random.Random
 import kotlin.math.min
 
@@ -104,14 +103,14 @@ fun pairWork(cur1: String, cur2: String) {
             // If everything is fine
             if (amount > 0 && amount <= Global.maxPossibleToBuy) {
                 if (Global.buying == cur1) {
-                    User.valueOf(cur2).balance -= amount * course1 / course2 .toInt()
-                    Bank.valueOf(cur2).balance += amount * course1 / course2 .toInt()
+                    User.valueOf(cur2).balance -= amount * (course1.toDouble() / course2.toDouble()) .toInt()
+                    Bank.valueOf(cur2).balance += amount * (course1.toDouble() / course2.toDouble()) .toInt()
                     Bank.valueOf(cur1).balance -= amount
                     User.valueOf(cur1).balance += amount
                 }
                 else {
-                    User.valueOf(cur1).balance -= amount * course2 / course1 .toInt()
-                    Bank.valueOf(cur1).balance += amount * course2 / course1 .toInt()
+                    User.valueOf(cur1).balance -= amount * (course2.toDouble() / course1.toDouble()) .toInt()
+                    Bank.valueOf(cur1).balance += amount * (course2.toDouble() / course1.toDouble()) .toInt()
                     Bank.valueOf(cur2).balance -= amount
                     User.valueOf(cur2).balance += amount
                 }

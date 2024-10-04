@@ -21,7 +21,7 @@ enum class Currencies(var course: Int, val code: String) {
 
 // Absolutely enormous decision to make User and Bank enums, but this is the only way I could use valueOf() to print balances not to use N -> inf println()'s
 // The real balance is BalanceHere * .01
-enum class User(var balance: Int) {
+internal enum class User(var balance: Int) {
     RUB(100000000),
     USD(0),
     EUR(0),
